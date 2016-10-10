@@ -435,63 +435,6 @@ namespace TibianicTools
                     Client.GameWindowOffset1 = 0x2C;
                     Client.GameWindowOffset2 = 0x30;
                     #endregion
-                    return true;
-                case "8.60":
-                    TibianicTools.Client.TibiaVersion = 860;
-                    #region 7.72 addresses
-                    Player.Status = 0x005C67D8;
-                    Player.FistPercent = Player.Status + 4;
-                    Player.ClubPercent = Player.Status + 8;
-                    Player.SwordPercent = Player.Status + 12;
-                    Player.AxePercent = Player.Status + 16;
-                    Player.DistancePercent = Player.Status + 20;
-                    Player.ShieldingPercent = Player.Status + 24;
-                    Player.FishingPercent = Player.Status + 28;
-                    Player.Fist = Player.Status + 32;
-                    Player.Club = Player.Status + 36;
-                    Player.Sword = Player.Status + 40;
-                    Player.Axe = Player.Status + 44;
-                    Player.Distance = Player.Status + 48;
-                    Player.Shielding = Player.Status + 52;
-                    Player.Fishing = Player.Status + 56;
-                    Player.Cap = Player.Status + 72;
-                    Player.Soul = Player.Status + 76;
-                    Player.MaxMana = Player.Status + 80;
-                    Player.Mana = Player.Status + 84;
-                    Player.MagicLevelPercent = Player.Status + 88;
-                    Player.LevelPercent = Player.Status + 92;
-                    Player.MagicLevel = Player.Status + 96;
-                    Player.Level = Player.Status + 100;
-                    Player.Exp = Player.Status + 104;
-                    Player.MaxHP = Player.Status + 108;
-                    Player.HP = Player.Status + 112;
-                    Player.PlayerID = Player.Status + 116;
-                    Player.PosZ = 0x005D16E8;
-                    Player.PosY = Player.PosZ + 4;
-                    Player.PosX = Player.PosZ + 8;
-
-                    Battlelist.Begin = 0x005C68B0;
-                    Battlelist.Step = 156;
-                    Battlelist.End = Battlelist.Begin + Battlelist.Step * 250;
-
-                    Charlist.Pointer = 0x0071C54C;
-                    Charlist.NumberOfCharacters = 0x0071C550;
-                    Charlist.SelectedIndex = 0x0071C548;
-
-                    Client.StatusBarText = 0x0071DBE0;
-                    Client.StatusBarTime = Client.StatusBarText - 4;
-                    Client.Connection = 0x0071C588;
-                    Client.DialogPointer = 0x005D16AC;
-                    Client.DialogDistanceTitle = 0x50;
-                    Client.DialogOpen = 0x0071C5E8;
-                    Client.LoginServerStart = 0x007152F8;
-                    Client.LoginServerStep = 112;
-                    Client.XTEAKey = 0x00719D78;
-                    Client.RSAKey = 0x0055B620;
-                    Client.GameWindowPointer = 0x005D16B0;
-                    Client.GameWindowOffset1 = 0x2C;
-                    Client.GameWindowOffset2 = 0x30;
-                    #endregion
                     return true;					
                 default:
                     return false;
