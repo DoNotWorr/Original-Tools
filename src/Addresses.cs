@@ -435,6 +435,73 @@ namespace TibianicTools
                     Client.GameWindowOffset1 = 0x2C;
                     Client.GameWindowOffset2 = 0x30;
                     #endregion
+                    return true;
+                // Tryller
+                case "8.61":
+                    TibianicTools.Client.TibiaVersion = 861;
+                    #region 8.61 addresses
+                    Player.Status = 0x791ABC;
+                    Player.Exp = 0x634BCC;
+                    Player.FistPercent = 0x634B64;
+                    Player.ClubPercent = Player.FistPercent + 4;
+                    Player.SwordPercent = Player.FistPercent + 8;
+                    Player.AxePercent = Player.FistPercent + 12;
+                    Player.DistancePercent = Player.FistPercent + 16;
+                    Player.ShieldingPercent = Player.FistPercent + 20;
+                    Player.FishingPercent = Player.FistPercent + 24;
+                    Player.Fist = Player.FistPercent + 28;
+                    Player.Club = Player.FistPercent + 32;
+                    Player.Sword = Player.FistPercent + 36;
+                    Player.Axe = Player.FistPercent + 40;
+                    Player.Distance = Player.FistPercent + 44;
+                    Player.Shielding = Player.FistPercent + 48;
+                    Player.Fishing = Player.FistPercent + 52;
+                    Player.Cap = Player.Exp - 36;
+                    Player.Soul = Player.Exp - 28;
+                    Player.MaxMana = Player.Exp - 24;
+                    Player.Mana = Player.Exp - 20;
+                    Player.MagicLevelPercent = Player.Exp - 16;
+                    Player.LevelPercent = Player.Exp + 12;
+                    Player.MagicLevel = Player.Exp - 8;
+                    Player.Level = Player.Exp - 4;
+                    Player.MaxHP = Player.Exp + 4;
+                    Player.HP = Player.Exp + 8;
+                    Player.PlayerID = Player.Exp + 12;
+                    Player.PosZ = 0x644260;
+                    Player.PosY = Player.PosZ + 4;
+                    Player.PosX = Player.PosZ + 8;
+
+                    Battlelist.Begin = 0x634C38;
+                    Battlelist.Step = 0xA8; //156
+                    Battlelist.End = Battlelist.Begin + Battlelist.Step * 250;
+
+                    Charlist.Pointer = 0x791A70; // Client.LoginCharList
+                    Charlist.NumberOfCharacters = 0x791A74; // Client.LoginCharListLength
+                    Charlist.SelectedIndex = 0x791A6C; // Client.LoginSelectedChar
+
+                    Client.StatusBarText = 0x7D5340;
+                    Client.StatusBarTime = Client.StatusBarText - 4;
+                    Client.Connection = 0x791ABC;
+                    Client.DialogPointer = 0x644224;
+                    Client.DialogDistanceTitle = 0x50; // Client.DialogCaption
+                    Client.DialogOpen = 0x644224; //  Client.DialogPointer ? Não Sei
+                    Client.LoginServerStart = 0x789458;
+                    Client.LoginServerStep = 112;
+                    Client.XTEAKey = 0x78E51C;
+                    Client.RSAKey = 0x5B0980;
+                    Client.GameWindowPointer = 0x7D5330; // Client.GameWindowBar ou Client.GameWindowRectPointer Não sei
+                    Client.GameWindowOffset1 = 0x2C;
+                    Client.GameWindowOffset2 = 0x30;
+
+                    VIP.Begin = 0x6328F8;
+                    VIP.Step = 0x2C;
+                    VIP.End = VIP.Begin + (VIP.Step * 250);
+
+                    Container.Begin = 0x641970;
+                    Container.MaxContainers = 16;
+                    Container.Step = 492;
+                    Container.End = Container.Begin + (Container.MaxContainers * Container.Step);
+                    #endregion
                     return true;					
                 default:
                     return false;
